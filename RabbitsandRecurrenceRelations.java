@@ -21,6 +21,10 @@ public class RabbitsandRecurrenceRelations
             if (i == 0) {
 
             }
+            else if (i == 1){
+                mRabbits += yRabbits;
+                yRabbits = 0;
+            }
             else {
                 mRabbits += yRabbits;
                 yRabbits = mRabbits * birthrate;
