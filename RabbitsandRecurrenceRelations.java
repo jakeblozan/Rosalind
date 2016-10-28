@@ -10,29 +10,23 @@ import java.util.Scanner;
 public class RabbitsandRecurrenceRelations
 {
     public static void main(String[] args) throws IOException {
-        Scanner scan = new Scanner(new File("practice.txt"));
+        Scanner scan = new Scanner(new File("rosalind_fib (2).txt"));
         System.out.println("Fetching data...");
-        int mRabbits = 0;
-        int yRabbits = 1;
+        double mRabbits = 0;
+        double yRabbits = 1;
         //        int y2Rabbits = 0;
         int months = scan.nextInt();
         int birthrate = scan.nextInt();
-        for (int i = 0; i < months; i++) {
-            if (i == 0) {
-
-            }
-            else if (i == 1){
-                mRabbits += yRabbits;
-                yRabbits = 0;
-            }
-            else {
-                mRabbits += yRabbits;
-                yRabbits = mRabbits * birthrate;
-            }
+        for (int i = 1; i < months; i++) {
+            double temp = yRabbits;
+            yRabbits = mRabbits * birthrate;
+            mRabbits += temp;
             System.out.println(mRabbits);
             System.out.println(yRabbits);
             System.out.println("");
         }
-        System.out.println(mRabbits + yRabbits);
+        PrintWriter writer = new PrintWriter("result.txt", "UTF-8");
+        writer.println(mRabbits + yRabbits);
+        writer.close();
     }
 }
