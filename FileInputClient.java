@@ -5,9 +5,7 @@
  */
 
 import java.util.Scanner;
-import java.io.File;
-import java.io.PrintWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class FileInputClient 
 {
@@ -49,7 +47,7 @@ public class FileInputClient
 		// sample print to text file function
         	PrintWriter writer = new PrintWriter("result.txt", "UTF-8");
         	writer.println("The first line");
-        	writer.println("The second line");
+        	writer.println("The second letter");
         	writer.close();
 	}
 }
