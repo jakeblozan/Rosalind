@@ -18,7 +18,6 @@ public class ComputingGCContent
         for (int i = 0; i < length; i++) {
             if (data.charAt(i) == '>') {
                 strings++;
-
             }
         }
         int[] indexes = new int[strings];
@@ -42,6 +41,18 @@ public class ComputingGCContent
                 content[i] = data.substring((indexes[i] + 15), data.length());
             }
         }
-        System.out.println(Arrays.toString(content));
+        double[] gcContent = new double[strings];
+        for (int i = 0; i < strings; i++) {
+            double GCs = 0;
+            for (int q = 0; q < content[i].length(); q++) {
+                char X = content[i].charAt(q);
+                if (X == 'G' || X == 'C') {
+                    GCs++;
+                }
+            }
+            double currentContent = GCs / (content[i].length());
+            gcContent[i] = currentContent;
+        }
+        System.out.println(Arrays.toString(gcContent));
     }
 }
