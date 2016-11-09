@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class ComputingGCContent
 {
     public static void main(String[] args) throws IOException {
-        String data = new Scanner(new File("practice.txt")).useDelimiter("\\A").next();
+        String data = new Scanner(new File("rosalind_gc.txt")).useDelimiter("\\A").next();
         System.out.println("Fetching data...");
         int strings = 0;
         int length = data.length();
@@ -43,16 +43,38 @@ public class ComputingGCContent
         }
         double[] gcContent = new double[strings];
         for (int i = 0; i < strings; i++) {
-            double GCs = 0;
+            double GCs = 0.0;
+            double all = 0.0;
             for (int q = 0; q < content[i].length(); q++) {
                 char X = content[i].charAt(q);
                 if (X == 'G' || X == 'C') {
                     GCs++;
+                    all++;
+                    //System.out.println("got one");
                 }
+                else if (X == 'T' || X == 'A'){
+                    all++;
+                }
+                //System.out.println("");
             }
-            double currentContent = GCs / (content[i].length());
+            System.out.println(GCs);
+            System.out.println("\t" + all);
+            double currentContent = GCs / all;
             gcContent[i] = currentContent;
+            System.out.println(currentContent);
+            System.out.println("");
+            System.out.println("");
         }
-        System.out.println(Arrays.toString(gcContent));
+        double currentTop = gcContent[0];
+        int whichTag = 0;
+        for (int i = 0; i < strings; i++) {
+            double newTop = gcContent[i];
+            if (newTop > currentTop) {
+                currentTop = newTop;
+                whichTag = i;
+            }
+        }
+        System.out.println(tags[whichTag]);
+        System.out.println(currentTop);
     }
 }
