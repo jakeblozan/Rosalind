@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Write a description of class ComputingGCContent here.
  * 
  * @author (Jake Blozan) 
- * @version (10/28/16)
+ * @version (11/9/16)
  */
 public class ComputingGCContent
 {
@@ -57,13 +57,14 @@ public class ComputingGCContent
                 }
                 //System.out.println("");
             }
-            System.out.println(GCs);
-            System.out.println("\t" + all);
+            //System.out.println(GCs);
+            //System.out.println("\t" + all);
             double currentContent = GCs / all;
-            gcContent[i] = currentContent;
-            System.out.println(currentContent);
-            System.out.println("");
-            System.out.println("");
+            double contentPercent = currentContent * 100;
+            gcContent[i] = contentPercent;
+            //System.out.println(contentPercent);
+            //System.out.println("");
+            //System.out.println("");
         }
         double currentTop = gcContent[0];
         int whichTag = 0;

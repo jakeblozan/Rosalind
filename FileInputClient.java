@@ -43,6 +43,9 @@ public class FileInputClient
 			System.out.print(str + " ");
 		}
 		inFile3.close();
+		
+		//takes whole document as a string
+		String data = new Scanner(new File("practice.txt")).useDelimiter("\\A").next();
 
 		// sample print to text file function
         	PrintWriter writer = new PrintWriter("result.txt", "UTF-8");
