@@ -36,7 +36,7 @@ public class Mendels1stLaw
         System.out.println(probRecHet);
         double probRecRec = (rec / total) * (rec / (total - 1));
         System.out.println(probRecRec);
-        double totalProb = probDomDom + probDomHet + probDomRec + probHetHet + probHetRec + probRecRec;
+        double totalProb = probDomDom + probDomHet + probDomRec + probHetDom + probHetHet + probHetRec + probRecDom + probRecHet + probRecRec;
         System.out.println(totalProb);
     }
 }
