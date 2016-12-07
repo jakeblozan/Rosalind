@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Probabilities are: 1, 0.5, 1, 0.75, 0.5, 0
  * 
  * @author (Jake Blozan) 
- * @version (11/29/16)
+ * @version (12/6/16)
  */
 public class Mendels1stLaw
 {
