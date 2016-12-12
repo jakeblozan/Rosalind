@@ -10,7 +10,7 @@ import java.io.*;
 public class ComplementingaStrandofDNA
 {
     public static void main(String[] args) throws IOException {
-        Scanner scan = new Scanner(new File("rosalind_revc.txt"));
+        Scanner scan = new Scanner(new File("practice.txt"));
         System.out.println("Fetching data...");
         String input = scan.next();
         int length = input.length();
