@@ -5,12 +5,12 @@ import java.io.*;
  * Write a description of class TranslatingRNAintoProtein here.
  * 
  * @author (Jake Blozan) 
- * @version (12/9/16)
+ * @version (12/13/16)
  */
 public class TranslatingRNAintoProtein
 {
     public static void main(String[] args) throws IOException {
-        Scanner data = new Scanner(new File("practice.txt"));
+        Scanner data = new Scanner(new File("rosalind_prot.txt"));
         Scanner tableScan = new Scanner(new File("table.txt"));
         System.out.println("Fetching data...");
         String[] tableInit = new String[128];
@@ -50,11 +50,19 @@ public class TranslatingRNAintoProtein
                 which++;
             }
         }
-        char[] tranlated = new char[codons];
-        System.out.println(allData.length());
+        String[] translated = new String[codons];
+        for (int i = 0; i < codons; i++) {
+            for (int q = 0; q < 64; q++) {
+                if (dataArray[i].equals(RNA[q])) {
+                    translated[i] = proteins[q];
+                }
+            }
+        }
+        String result = "";
+        for (int i = 0 ; i < codons; i++) {
+            result += translated[i];
+        }
         System.out.println(Arrays.toString(dataArray));
-        System.out.println(Arrays.toString(tableInit));
-        System.out.println(Arrays.toString(RNA));
-        System.out.println(Arrays.toString(proteins));
+        System.out.println(result);
     }
 }
