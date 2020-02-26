@@ -13,6 +13,7 @@ public class ComplementingaStrandofDNA
         Scanner scan = new Scanner(new File("practice.txt"));
         System.out.println("Fetching data...");
         String input = scan.next();
+        System.out.println(input);
         int length = input.length();
         String result = "";
         for (int i = 0; i < length; i++) {
@@ -31,6 +32,7 @@ public class ComplementingaStrandofDNA
             }
         }
         PrintWriter writer = new PrintWriter("result.txt", "UTF-8");
+        System.out.println(result);
         writer.print(result);
         writer.close();
         System.out.println("Done");
